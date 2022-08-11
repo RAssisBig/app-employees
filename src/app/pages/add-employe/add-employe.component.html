@@ -1,0 +1,24 @@
+<h2>Cadastrar funcionário</h2>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control mb-2" id="nome" formControlName="nome">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control mb-2" id="email" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <input type="text" class="form-control mb-2" id="cargo" formControlName="cargo">
+    </div>
+    <div class="form-group">
+        <label for="salario">Salário</label>
+        <input type="number" class="form-control mb-2" id="salario" formControlName="salario">
+    </div>
+    <div class="form-group">
+        <label for="foto">Foto</label>
+        <input type="url" class="form-control mb-2" id="foto" formControlName="foto">
+    </div>
+    <button type="submit" class="btn btn-dark">Enviar</button>
+</form>

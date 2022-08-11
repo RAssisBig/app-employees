@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Foto</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Cargo</th>
+            <th scope="col">Salário</th>
+            <th scope="col">Excluir</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of listaFuncionarios">
+            <td>
+                <img [src]="f.foto" alt="foto" style="width: 150px; height: 150px">
+            </td>
+            <td>{{ f.nome }}</td>
+            <td>{{ f.email }}</td>
+            <td>{{ f.cargo }}</td>
+            <td>{{ f.salario }}</td>
+            <td>
+                <button class="btn btn-danger" (click)="excluirFuncionario(f.id)">Apagar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

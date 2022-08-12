@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Funcionario } from 'src/app/models/funcionario';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 
@@ -12,9 +13,11 @@ export class TableEmployeesComponent implements OnInit {
   public listaFuncionarios: Funcionario[] = [];
 
   private service: FuncionarioService;
+  private router: Router;
 
-  constructor(service: FuncionarioService) {
+  constructor(service: FuncionarioService, router: Router) {
     this.service = service;
+    this.router = router;
   }
 
   ngOnInit(): void {
@@ -37,6 +40,12 @@ export class TableEmployeesComponent implements OnInit {
   public excluirFuncionario(id: string | undefined): void {
     if(id != undefined && window.confirm("Deseja, realmente, excluir o registro?")){
       this.service.remove(id);
+    }
+  }
+
+  public editarFuncionario(id: string | undefined): void {
+    if(id != undefined) {
+      this.router.navigate(['/edit', id]); //  localhost:4200/edit/20
     }
   }
 }

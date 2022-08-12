@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TableEmployeesComponent } from './table-employees/table-employees.component';
 import { AddEmployeComponent } from './add-employe/add-employe.component';
 import { EditEmployeComponent } from './edit-employe/edit-employe.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     TableEmployeesComponent,

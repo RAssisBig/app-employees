@@ -1,24 +1,24 @@
 <h2>Editar funcionário</h2>
-<form>
+<form *ngIf="funcionario != null" (ngSubmit)="editarFuncionario()">
     <div class="form-group">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control mb-2" id="nome">
+        <input type="text" class="form-control mb-2" id="nome" name="nome" [(ngModel)]="funcionario.nome">
     </div>
     <div class="form-group">
         <label for="email">E-mail</label>
-        <input type="email" class="form-control mb-2" id="email">
+        <input type="email" class="form-control mb-2" id="email" name="email" [(ngModel)]="funcionario.email">
     </div>
     <div class="form-group">
         <label for="cargo">Cargo</label>
-        <input type="text" class="form-control mb-2" id="cargo">
+        <input type="text" class="form-control mb-2" id="cargo" name="cargo" [(ngModel)]="funcionario.cargo">
     </div>
     <div class="form-group">
         <label for="salario">Salário</label>
-        <input type="number" class="form-control mb-2" id="salario">
+        <input type="number" class="form-control mb-2" id="salario" name="salario" [(ngModel)]="funcionario.salario">
     </div>
     <div class="form-group">
         <label for="foto">Foto</label>
-        <input type="url" class="form-control mb-2" id="foto">
+        <input type="url" class="form-control mb-2" id="foto" name="foto" [(ngModel)]="funcionario.foto">
     </div>
     <button type="submit" class="btn btn-dark">Editar</button>
 </form>
